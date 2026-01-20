@@ -8,11 +8,11 @@ class TestTextNode(unittest.TestCase):
             "tag",
             "value",
             None,
-            {"class": "domain", "href": "http://www.com"},
+            {"class": "domain", "href": "http://www.example.com"},
         )
         self.assertEqual(
             node.props_to_html(),
-            ' class="domain" href="http://www.com"',
+            ' class="domain" href="http://www.example.com"',
         )
 
     def test_values(self):

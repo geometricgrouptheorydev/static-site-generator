@@ -58,8 +58,9 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
             raise SyntaxError("Invalid Markdown Syntax; either an extra delimiter was added or one is missing")
         use_node_text_type = True
         for text in split_text:
-            current_text_type = node_text_type if use_node_text_type else text_type
+            #this line will be revamped to support bold + italic etc. later
             use_node_text_type = not use_node_text_type
+            current_text_type = node_text_type if use_node_text_type else text_type
             if text != "":
                 new_nodes.append(TextNode(text, current_text_type))
     return new_nodes

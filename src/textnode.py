@@ -1,5 +1,5 @@
 from enum import Enum
-from htmlnode import LeafNode
+from src.htmlnode import LeafNode
 
 class TextType(Enum):
 	TEXT = None
@@ -17,6 +17,8 @@ class TextType(Enum):
 		# pretty display name
 		return self.name.lower() if self is not TextType.TEXT else "text"
 
+#Middleman in the conversion from Blocks to HTMLNodes
+#Records the text and text type of a particular portion of text, and url for images and links
 class TextNode:
 	def __init__(self, text, text_type, url = None):
 		self.text = text

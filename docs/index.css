@@ -1,6 +1,6 @@
 body {
   background-color: #000000;
-  color: #550080;
+  color: #d588fc;
   font-family: "Luminari", "Georgia", serif;
   line-height: 1.7;
   margin: 0;
@@ -45,14 +45,14 @@ h6 {
 }
 
 a {
-  color: #550080;
+  color: #d588fc;
   text-decoration: none;
-  border-bottom: 2px solid #550080;
+  border-bottom: 2px solid #d588fc;
 }
 
 a:hover {
-  color: #550080;
-  border-color: #550080;
+  color: #d588fc;
+  border-color: #d588fc;
 }
 
 ul,
@@ -61,9 +61,7 @@ ol {
 }
 
 code {
-  background-color: #0000a0;
-  border-radius: 6px;
-  color: #550080;
+  color: #ffffff;
   padding: 0.4em 0.6em;
   font-family: "Courier New", monospace;
 }
@@ -73,7 +71,7 @@ pre code {
 }
 
 pre {
-  background-color: #3c3c42;
+  background-color: #00005f;
   border-radius: 6px;
   padding: 1em;
   overflow: auto;

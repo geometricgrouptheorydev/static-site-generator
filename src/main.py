@@ -15,6 +15,7 @@ def wipe_directory_content(path):
 
 #copies from source directory path to target path, wiping anything in the target path first
 def copy(source, target):
+    os.makedirs(target, exist_ok=True)
     wipe_directory_content(target)
     changelog = f"{target} content wiped"
     with os.scandir(source) as entries:

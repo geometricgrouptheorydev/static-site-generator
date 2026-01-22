@@ -1,4 +1,4 @@
-# Static Site Generator sample pages
+# Static Site Generator Sample Pages
 
 Welcome to the sample pages of this humble static site generator. Every page is written in Markdown, and converted to HTML by a custom converter. I hope the following shows you a taste of the available features so far, and perhpas the content too would prove mildly amusing and/or interesting. 
 

@@ -1,5 +1,7 @@
+#!/usr/bin/env python3
+
 import sys
-from src.converter import extract_title, markdown_to_html_node
+from converter import extract_title, markdown_to_html_node
 import os, shutil
 
 #helper for the copy function
@@ -69,8 +71,8 @@ def generate_pages_recursive(dir_path_content, template_path, dest_dir_path, bas
 #builds the pages
 def main():
     basepath = sys.argv[1] if len(sys.argv) >= 2  else "/"
-    copy(os.path.abspath("static"), os.path.abspath("docs")) #copies your static files such as images to the docs directory, ready to be used
-    generate_pages_recursive(os.path.abspath("content"), os.path.abspath("template.html"), os.path.abspath("docs"), basepath)
+    copy(os.path.abspath("static"), os.path.abspath("public")) #copies your static files such as images to the public directory, ready to be used
+    generate_pages_recursive(os.path.abspath("content"), os.path.abspath("template.html"), os.path.abspath("public"), basepath)
 
 if __name__ == "__main__":
     main()

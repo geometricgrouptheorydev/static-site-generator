@@ -1,7 +1,7 @@
 import re
-from src.blocks import BlockType, markdown_to_blocks, block_to_block_type, is_heading
-from src.htmlnode import LeafNode, ParentNode
-from src.textnode import TextNode, TextType, text_node_to_html_node, text_to_textnodes
+from blocks import BlockType, markdown_to_blocks, block_to_block_type, is_heading
+from htmlnode import LeafNode, ParentNode
+from textnode import TextNode, TextType, text_node_to_html_node, text_to_textnodes
 
 def heading_level(heading): #helper function to find the heading type
     return sum( 1 for i in range(0,6) if heading[i] == "#" )

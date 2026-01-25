@@ -53,6 +53,9 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
     new_nodes = []
     for node in old_nodes:
         node_text_type = node.text_type
+        if node_text_type != TextType.TEXT:
+            new_nodes.append(node)
+            continue
         split_text = node.text.split(delimiter)
         if len(split_text) % 2 == 0:
             raise SyntaxError("Invalid Markdown Syntax; either an extra delimiter was added or one is missing")
@@ -109,10 +112,11 @@ def split_nodes_link(old_nodes):
 
 def text_to_textnodes(text): #Note: does not support nested delimiters yet!
     nodes = [TextNode(text, TextType.TEXT)] #The whole text is set under a textnode but we split those below
+    nodes = split_nodes_delimiter(nodes, "`", TextType.CODE)
+    #Code blocks should not be affected by the below:
     nodes = split_nodes_delimiter(nodes, "**", TextType.BOLD)
     nodes = split_nodes_delimiter(nodes, "_", TextType.ITALIC)
     nodes = split_nodes_delimiter(nodes, "*", TextType.ITALIC) #We want to support both italic syntaxes
-    nodes = split_nodes_delimiter(nodes, "`", TextType.CODE)
     nodes = split_nodes_delimiter(nodes, "~~", TextType.STRIKETHROUGH)
     nodes = split_nodes_delimiter(nodes, "^", TextType.SUPERSCRIPT)
     nodes = split_nodes_delimiter(nodes, "~", TextType.SUBSCRIPT)
